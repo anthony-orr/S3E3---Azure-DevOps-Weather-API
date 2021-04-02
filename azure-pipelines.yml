@@ -20,11 +20,11 @@ stages:
     pool:
       vmImage: ubuntu-latest
     steps:
-      - task: Docker@2
-        inputs:
-          containerRegistry: 'DockerHub - aorr16'
-          repository: 'aorr16/weatherapi'
-          command: 'buildAndPush'
-          Dockerfile: '**/Dockerfile'
-              tags: |
-                $(tag)
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'DockerHub - aorr16'
+        repository: 'aorr16/weatherapi'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+            tags: |
+              $(tag)
