@@ -18,7 +18,7 @@ stages:
   - job: Build
     displayName: Build
     pool:
-      vmImage: ubuntu-latest
+      vmImage: 'ubuntu-latest'
     steps:
     - task: Docker@2
       inputs:
@@ -26,5 +26,5 @@ stages:
         repository: 'aorr16/weatherapi'
         command: 'buildAndPush'
         Dockerfile: '**/Dockerfile'
-            tags: |
-              $(tag)
+        tags: |
+          $(tag)
